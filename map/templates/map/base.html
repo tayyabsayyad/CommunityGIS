@@ -1,0 +1,127 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'footer.css' %}" >
+    <link rel="stylesheet" href="{% static 'leaflet.css' %}" >
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'plugins/L.Control.Pan.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/L.Control.Zoomslider.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/L.Control.MousePosition.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/L.Control.Sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/Leaflet.PolylineMeasure.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/easy-button.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-dropdownhover.css' %}">
+
+    <link rel="stylesheet" href="{% static 'plugins/leaflet-opencage/src/css/L.Control.OpenCageSearch.css' %}" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'front.css' %}">
+	
+    <!-- <script src="{% static 'app.js' %}"></script>    -->
+    
+    <script src="{% static 'js/bootstrap-dropdownhover.js' %}" ></script>
+    
+
+    <script src="{% static 'leaflet-src.js' %}" ></script>
+    <!-- <script src="src/jquery-3.2.0.min.js"></script> -->
+    <script src="{% static 'plugins/L.Control.Pan.js' %}" ></script>
+    <script src="{% static 'plugins/L.Control.Zoomslider.js' %}" ></script>
+    <script src="{% static 'plugins/L.Control.MousePosition.js' %}"></script>
+    <script src="{% static 'plugins/L.Control.Sidebar.js' %}"></script>
+    <script src="{% static 'plugins/Leaflet.PolylineMeasure.js' %}"></script>
+    <script src="{% static 'plugins/easy-button.js' %}"></script>
+    <script src="{% static 'plugins/leaflet-providers.js' %}"></script>
+    <script src="{% static 'plugins/leaflet-opencage/src/js/L.Control.OpenCageSearch.js' %}"></script>
+    <!-- <script src="{% static 'app.js' %}"></script> -->
+    <!-- <link rel="stylesheet" type="leaflet.wms.js" href="{% static 'css/component.css' %}"  /> -->
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+    <link rel= 'stylesheet' href="{% static 'css/component.css' %}">
+    <script src="{% static 'plugins/leaflet.ajax.min.js' %}" ></script>
+    <script src="{% static 'js/modernizr-custom.js' %}" ></script>
+    <script src="{% static 'leaflet.wms.js' %}" ></script>
+
+    <script src="{% static 'js/classie.js' %}"></script>
+    <!-- <script src="js/dummydata.js"></script> -->
+    <!-- <script src="src/js/main.js"></script> -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'myscript.js' %}"></script>
+
+    <title>CommunityGIS</title>
+  </head>
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="{% url 'front'%}">Community GIS</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="{% url 'front'%}">Home <span class="sr-only">(current)</span></a>
+	      </li>
+
+	      <li class="nav-item active">
+	        <a class="nav-link" href="{% url 'login' %}">Login<span class="sr-only">(current)</span></a>
+	      </li>
+
+	       <li class="nav-item active">
+	        <a class="nav-link" href="{% url 'home' %}">application<span class="sr-only">(current)</span></a>
+	      </li>
+
+
+
+	     <!--  <li class="nav-item">
+	        <a class="nav-link" href="#">Link</a>
+	      </li> -->
+	      <!-- <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Dropdown
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Action</a>
+	          <a class="dropdown-item" href="#">Another action</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li> -->
+	      <!-- <li class="nav-item">
+	        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+	      </li> -->
+	    </ul>
+	    
+	  </div>
+	</nav>
+    {% block content%}
+    {% endblock %}
+
+    <div class="footer">
+	  <!-- Footer -->
+	<footer class="page-footer font-small">
+
+	  <!-- Copyright -->
+	  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+	    <a href="https://makerghat.org"> makerGHAT.com</a>
+	  </div>
+	  <!-- Copyright -->
+
+	</footer>
+	<!-- Footer -->
+	</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'map/base.html' %}
+{% load static%}
+{% block content %}
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<link rel="stylesheet" href="{% static 'front.css' %}">
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <img src="{% static 'images/back_ground.jpg' %}">
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">Community GIS</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center"></p>
+  </div>
+  
+</div>
+
+{% endblock %}

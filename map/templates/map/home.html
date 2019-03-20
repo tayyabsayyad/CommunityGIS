@@ -1,0 +1,608 @@
+{% extends 'map/base.html'%}
+{% block content %}
+<div id="side-bar">
+    <!-- Main container -->
+    <div >
+        
+        <!-- <button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button> -->
+        <nav id="ml-menu" >
+            <!-- <button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button> -->
+            <div class="menu__wrap">
+                <ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="Themes">
+                    <li class="menu__item" role="menuitem"><a id="locatemumbai" class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">Mumbai<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">Census<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <!-- <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3" href="#">Analytics</a></li> -->
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3" href="#">Education<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-4" href="#">Health<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" id="locatepune" data-submenu="submenu-5" aria-owns="submenu-1" href="#">Pune<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                
+                </ul>
+                <!-- Submenu 1 -->
+                <ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Mumbai">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-1" aria-owns="submenu-1-1" href="#">DP Layer<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-2" aria-owns="submenu-1-2" href="#">Census<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-3" aria-owns="submenu-1-3" href="#">Analytics<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4" aria-owns="submenu-1-4" href="#">SWM<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                </ul>
+                <!-- Submenu 1-1 -->
+                <ul data-menu="submenu-1-1" id="submenu-1-1" class="menu__level" tabindex="-1" role="menu" aria-label="DP Layer">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-1-1" aria-owns="submenu-1-1-1" href="#">Education<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                      <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Health</a></li>
+        
+                </ul>
+                <!-- Submenu 1-1-1 -->
+                <ul data-menu="submenu-1-1-1" id="submenu-1-1-1" class="menu__level" tabindex="-1" role="menu" aria-label="Education">
+                    <li class="menu__item" role="menuitem"><a id = 'primary_school' class="menu__link" href="#">Primary</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Secondary</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Primary and Secondary</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Highschool</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Tertiary school</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">University</a></li>
+
+                </ul>
+
+                <!-- Submenu 1-2 -->
+                <ul data-menu="submenu-1-2" id="submenu-1-2" class="menu__level" tabindex="-1" role="menu" aria-label="Census">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Adminward wise</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Corporator ward wise(year)</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-2-3" aria-owns="submenu-1-2-3" href="#">Census 2011 wise (repeated as in census below)<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                </ul>
+                <!-- Submenu 1-2-3 -->
+                <ul data-menu="submenu-1-2-3" id="submenu-1-2-3" class="menu__level" tabindex="-1" role="menu" aria-label="Census 2011">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Demography</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Amenities</a></li>
+                </ul>
+                <!-- Submenu 1-3 -->
+                <ul data-menu="submenu-1-3" id="submenu-1-3" class="menu__level" tabindex="-1" role="menu" aria-label="Analytics">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Education</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Health</a></li>
+                </ul>
+                <!-- Submenu 1-4 -->
+                <ul data-menu="submenu-1-4" id="submenu-1-4" class="menu__level" tabindex="-1" role="menu" aria-label="SWM">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" id="buildingLocate" href="#">Building Layer</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building Cluster/complex/slum boundries</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Public Building</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" id="roadLayer" href="#">Road Layer</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" id="corporatorwise" href="#">Corporate ward boundary</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Admin ward boundary</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7" aria-owns="submenu-1-4-7" href="#">Greenness<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+
+                </ul>
+                <!-- Submenu 1-4-7 -->
+                <ul data-menu="submenu-1-4-7" id="submenu-1-4-7" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Greenness">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-1" aria-owns="submenu-1-4-7-1" href="#">Building: Seggregation Wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-2" aria-owns="submenu-1-4-7-2" href="#">Building: Composting Wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1-4-7-3" aria-owns="submenu-1-4-7-2" href="#">Building: Weight Wise<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+
+                    
+                    <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Corporation Ward: Seggregation wise</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Corporation Ward: Composting wise</a></li>
+                </ul>
+
+                <!-- Submenu 1-4-7-1 -->
+
+                <ul data-menu="submenu-1-4-7-1" id="submenu-1-4-7-1" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Building: Seggregation wise">
+                     <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Welcome</a></li>
+                     <li class="menu__item" role="menuitem"><a id="buildseg" style="background-color: #f44336;color: white; padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;" href="#">Show Data</a></li>
+                    <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
+                     <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Filter Data</a></li>
+                    <div id="divFilterEagle" class="col-xs-12">
+                        <div class="col-xs-4">
+                            <input type='radio' name='fltEagle' value='ALL' checked>All
+                        </div>
+                        <div class="col-xs-4">
+                            <input type='radio' name='fltEagle' value='Yes'>Yes
+                        </div>
+                        <div class="col-xs-4">
+                            <input type='radio' name='fltEagle' value='No'>No
+                        </div>
+                    </div>
+                </ul>
+
+                <ul data-menu="submenu-1-4-7-2" id="submenu-1-4-7-2" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Building: Composting wise">
+                     <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Welcome</a></li>
+                     <li class="menu__item" role="menuitem"><a id="buildcomp" style="background-color: #f44336;color: white; padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;" href="#">Show Data</a></li>
+                    <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
+                     <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Filter Data</a></li>
+                    <div id="divFilterEagle" class="col-xs-12">
+                        <div class="col-xs-4">
+                            <input type='radio' name='optbcomp' value='ALL' checked>All
+                        </div>
+                        <div class="col-xs-4">
+                            <input type='radio' name='optbcomp' value='Yes'>Yes
+                        </div>
+                        <div class="col-xs-4">
+                            <input type='radio' name='optbcomp' value='No'>No
+                        </div>
+                    </div>
+                </ul>
+
+                 <ul data-menu="submenu-1-4-7-3" id="submenu-1-4-7-2" class="menu__level" tabindex="-1" role="menu" aria-label="Mylk &amp; Building: Weight Wise">
+                     <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Welcome</a></li>
+                     <li class="menu__item" role="menuitem"><a id="buildweight" style="background-color: #f44336;color: white; padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;" href="#">Show Data</a></li>
+                    <!-- <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Building: Composting wise</a></li> -->
+                     <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Filter Data</a></li>
+                    <div id="divFilterEagle" class="col-xs-12">
+                        <div class="col-xs-4">
+                            <input type='radio' name='optbcomp' value='ALL' checked>All
+                        </div>
+                        <div class="col-xs-4">
+                            <input type='radio' name='optbcomp' value='Yes'>Yes
+                        </div>
+                        <div class="col-xs-4">
+                            <input type='radio' name='optbcomp' value='No'>No
+                        </div>
+                    </div>
+                </ul>
+
+                    <!-- <div id="divEagle" class="col-xs-12">
+    <div id="divEagleLabel" class="text-center col-xs-12">
+        <h4 id="lblEagle">Eagle Nests</h4>
+    </div>
+    <div id="divEagleError" class="errorMsg col-xs-12"></div>
+    <div id="divFindEagle" class="form-group has-error">
+        <div class="col-xs-6">
+            <input type="text" id="txtFindEagle" class="form-control" placeholder="Eagle Nest ID">
+        </div>
+        <div class="col-xs-6">
+            <button id="btnFindEagle" class="btn btn-primary btn-block" disabled>Find Eagle Nest</button>
+        </div>
+    </div>
+    <div id="divFilterEagle" class="col-xs-12">
+        <div class="col-xs-4">
+            <input type='radio' name='fltEagle' value='ALL' checked>All
+        </div>
+        <div class="col-xs-4">
+            <input type='radio' name='fltEagle' value='ACTIVE NEST'>Active
+        </div>
+        <div class="col-xs-4">
+            <input type='radio' name='fltEagle' value='INACTIVE LOCATION'>Inactive
+        </div>
+    </div>
+    <div class="" id="divEagleData"></div>
+</div> -->
+               
+
+                <!-- Submenu 2 -->
+                <ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu" aria-label="Selection">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-1" aria-owns="submenu-2-1" href="#">Mumbai<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2-2" aria-owns="submenu-2-2" href="#">Maharashra<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                </ul>
+                <!-- Submenu 2-1 -->
+                <ul data-menu="submenu-2-1" id="submenu-2-1" class="menu__level" tabindex="-1" role="menu" aria-label="Mumbai">
+                        <li class="menu__item" role="menuitem"><a class="menu__link" id = 'ward_layer' href="#">Mumbai ward boundary</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" id = 'roadLayer' href="#">Roads</a></li>
+                </ul>
+
+                 <!-- Submenu 2-2 -->
+                 <ul data-menu="submenu-2-2" id="submenu-2-2" class="menu__level" tabindex="-1" role="menu" aria-label="Maharashra">
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Admin boundries</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Settelments</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Demography</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Household Amenities(HLPCA)</a></li>
+                        <li class="menu__item" role="menuitem"><a id = 'ddw_layer' class="menu__link" href="#">Village Amenities (2700)</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Town Amenities( 2700)</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Topography ( DEM, Watershed)</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Waterbodies</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Roads ( OSM, other)</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Schools ( pointers to School data in theme School)</a></li>
+
+                    </ul>
+                  <!-- Submenu 3 -->
+                <ul data-menu="submenu-3" id="submenu-3" class="menu__level" tabindex="-1" role="menu" aria-label="Education">
+                        <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">India</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link"  data-submenu="submenu-3-2" aria-owns="submenu-3-2" href="#">Maharashra<span class="glyphicon glyphicon glyphicon-menu-right"></span></a></li>
+                </ul> 
+                
+                <ul data-menu="submenu-3-2" id="submenu-3-2" class="menu__level" tabindex="-1" role="menu" aria-label="Maharashtra">
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Basic</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Enrollment</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Facilities</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Teacher</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">RTE status</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Social Diffrence(SC/ST/OBC/General)</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Acedemic Performance</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Evluation</a></li>
+                </ul>
+
+                <!-- Submenu 4 -->
+                <ul data-menu="submenu-4" id="submenu-4" class="menu__level" tabindex="-1" role="menu" aria-label="Health">
+                    <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">India</a></li>
+                    <li class="menu__item" role="menuitem"><a class="menu__link"  href="#">Maharashra</a></li>
+            </ul> 
+            
+            </div>
+        </nav>
+        
+    </div>
+    <!-- /view -->
+    <script>
+    menu();
+    </script>
+    </div>
+<div id="mapdiv" class="col-md-12"></div>
+<script>
+var mymap;
+var lyrOSM;
+var lyrWatercolor;
+var lyrTopo;
+var lyrImagery;
+var lyrOutdoors;
+// var lyrChapultepec;
+var mrkCurrentLocation;
+var popZocalo;
+var ctlAttribute;
+var ctlScale;
+var ctlPan;
+var ctlZoomslider;
+var ctlMouseposition;
+var ctlMeasure;
+var ctlEasybutton;
+var ctlSidebar;
+var ctlSearch;
+var ctlLayers;
+var objBasemaps;
+var objOverlays;
+var building, source,roads,primarys,districtL,wardl,ddwl,buildseg,corporatorwise,buildcomp,buildweight;
+source = L.wms.source(
+    "http://13.82.229.27/geoserver/wfs",
+    {
+        "format": "image/png",
+        "transparent": "true"
+    }        
+    );
+
+$(document).ready(function(){
+    mymap = L.map('mapdiv', {center:[19.0760, 72.8777], zoom:13, zoomControl:false, attributionControl:false});
+    lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
+    // lyrTopo = L.tileLayer.provider('OpenTopoMap');
+    lyrImagery = L.tileLayer.provider('Esri.WorldImagery');
+    // lyrOutdoors = L.tileLayer.provider('Thunderforest.Outdoors');
+    // lyrWatercolor = L.tileLayer.provider('Stamen.Watercolor');
+    mymap.addLayer(lyrOSM);
+    
+    // lyrChapultepec = L.imageOverlay('img/chapultepec.png', [[19.42993,-99.20843],[19.40621,-99.17453]], {opacity:0.5}).addTo(mymap);
+    
+    objBasemaps = {
+        "Open Street Maps": lyrOSM,
+        // "Topo Map":lyrTopo,
+        "Imagery":lyrImagery
+        // "Outdoors":lyrOutdoors,
+        // "Watercolor":lyrWatercolor
+    };
+    
+    objOverlays = {
+        // "Chapultepec Image":lyrChapultepec
+    };
+    
+    ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(mymap);
+    
+    ctlPan = L.control.pan().addTo(mymap);
+    ctlZoomslider = L.control.zoomslider({position:'topright'}).addTo(mymap);
+    
+    ctlMeasure = L.control.polylineMeasure().addTo(mymap);
+    ctlSidebar = L.control.sidebar('side-bar').addTo(mymap);
+    
+    ctlEasybutton = L.easyButton('glyphicon-transfer', function(){
+       ctlSidebar.toggle(); 
+    }).addTo(mymap);
+    
+    ctlSearch = L.Control.openCageSearch({key: '3c38d15e76c02545181b07d3f8cfccf0',limit: 10}).addTo(mymap);
+    
+    ctlAttribute = L.control.attribution({position:'bottomleft'}).addTo(mymap);
+    ctlAttribute.addAttribution('OSM');
+    ctlAttribute.addAttribution('&copy; <a href="http://millermountain.com">Miller Mountain LLC</a>');
+    
+    ctlScale = L.control.scale({position:'bottomleft', metric:false, maxWidth:200}).addTo(mymap);
+    ctlMouseposition = L.control.mousePosition().addTo(mymap);
+    
+    popZocalo = L.popup({maxWidth:200,keepInView:true});
+    popZocalo.setLatLng([19.43262, -99.13325]);
+    popZocalo.setContent("<h2>Zocalo</h2><img src='img/zocalo.jpg' width='200px'>");
+    
+    mymap.on('contextmenu', function(e) {
+        var dtCurrentTime = new Date();
+        L.marker(e.latlng).addTo(mymap).bindPopup(e.latlng.toString()+"<br>"+dtCurrentTime.toString());
+    });
+    
+    mymap.on('keypress', function(e) {
+        if (e.originalEvent.key=="l") {
+            mymap.locate();
+        }
+    });
+    
+    mymap.on('locationfound', function(e) {
+        console.log('buildin');
+        // if (mrkCurrentLocation) {
+        //     mrkCurrentLocation.remove();
+        // }
+        // mrkCurrentLocation = L.circle(e.latlng, {radius:e.accuracy/2}).addTo(mymap);
+        // mymap.setView(e.latlng, 14);
+    });
+    
+    mymap.on('locationerror', function(e) {
+        console.log(e);
+        alert("Location was not found");
+    })
+    
+    mymap.on('zoomend', function(){
+        $("#zoom-level").html(mymap.getZoom());
+    });
+    
+    mymap.on('moveend', function(){
+        $("#map-center").html(LatLngToArrayString(mymap.getCenter()));
+    });
+    
+    mymap.on('mousemove', function(e){
+        $("#mouse-location").html(LatLngToArrayString(e.latlng));
+    });
+    
+    $("#buildingLocate").click(function(){
+        addBuildingLayer();
+    });
+
+    $("#buildseg").click(function(){
+        addBuildsegLayer();
+    });
+
+     $("#buildcomp").click(function(){
+        addBuildcompLayer();
+    });
+
+     $("#buildweight").click(function(){
+        addBuildweightLayer();
+    });
+
+     $("#corporatorwise").click(function(){
+        addCorporatorLayer();
+    });
+
+    $("#roadLayer").click(function(){
+        addRoadLayer();
+    });
+    
+
+    $("#primary_school").click(function(){
+        addPrimaryLayer();
+    });
+
+    $("#district_layer").click(function(){
+        addDistrictLayer();
+    });
+
+    $("#ward_layer").click(function(){
+        addWardLayer();
+    });
+
+    $("#ddw_layer").click(function(){
+        addDDWLayer();
+    });
+
+    $("#locatemumbai").click(function(){
+        mymap.setView([19.0607, 72.8362], 13);
+        // mymap.openPopup(popZocalo);
+    });
+
+    $("#locatepune").click(function(){
+        mymap.setView([18.5204, 73.8567], 13);
+        // mymap.openPopup(popZocalo);
+    });
+    
+    $("#sldOpacity").on('change', function(){
+        $("#image-opacity").html(this.value);
+        lyrChapultepec.setOpacity(this.value);
+    });
+}); //end of ready function
+
+
+function LatLngToArrayString(ll) {
+//                console.log(ll);
+    return "["+ll.lat.toFixed(5)+", "+ll.lng.toFixed(5)+"]";
+}
+
+function addBuildingLayer(){
+    console.log('this is building');
+    if(building){
+        building.remove(mymap);
+        building = 0;
+    }else{
+        building = source.getLayer("geonode:buildings_in_hwest").addTo(mymap);
+    }
+    
+}
+
+function addCorporatorLayer(){
+    console.log('this is corporatorwise ');
+    if(corporatorwise){
+        corporatorwise.remove(mymap);
+        corporatorwise = 0;
+    }else{
+        corporatorwise = L.geoJSON.ajax('data/corporator_boundries.geojson', {
+         //pointToLayer: returnCompMarker, filter:filterComp
+         // filter: function(feature, layer) {   
+         //     return (feature.properties.society_name === "Amber");
+         //   }
+      }).addTo(mymap);
+    }
+    
+}
+
+function addBuildsegLayer(){
+    console.log('this is fulcrum data ');
+    if(buildseg){
+        buildseg.remove(mymap);
+        buildseg = 0;
+    }else{
+       buildseg = L.geoJSON.ajax('data/swm_hwest/swm_hwest.geojson', {
+         pointToLayer: returnEagleMarker, filter:filterEagle
+         // filter: function(feature, layer) {   
+         //     return (feature.properties.society_name === "Amber");
+         //   }
+      }).addTo(mymap);
+
+    }
+    
+}
+
+function addBuildcompLayer(){
+    console.log('this is fulcrum data ');
+    if(buildcomp){
+        buildcomp.remove(mymap);
+        buildcomp = 0;
+    }else{
+       buildcomp = L.geoJSON.ajax('data/swm_hwest/swm_hwest.geojson', {
+         pointToLayer: returnCompMarker, filter:filterComp
+         // filter: function(feature, layer) {   
+         //     return (feature.properties.society_name === "Amber");
+         //   }
+      }).addTo(mymap);
+
+    }
+    
+}
+
+function addBuildweightLayer(){
+    console.log('this is fulcrum data ');
+    if(buildweight){
+        buildweight.remove(mymap);
+        buildweight = 0;
+    }else{
+       buildweight = L.geoJSON.ajax('data/swm_hwest/swm_hwest.geojson', {
+         pointToLayer: returnWeightMarker
+         // filter: function(feature, layer) {   
+         //     return (feature.properties.society_name === "Amber");
+         //   }
+      }).addTo(mymap);
+
+    }
+    
+}
+
+
+
+function addRoadLayer(){
+    console.log('Road');
+    if(roads){
+        roads.remove(mymap);
+        roads =0;
+    }else{
+        roads = source.getLayer("geonode:road_in_grid").addTo(mymap);
+    }
+   
+    
+}
+
+function addPrimaryLayer(){
+    console.log('primary layer');
+    if(primarys){
+        primarys.remove(mymap);
+        primarys =0;
+    }else{
+        primarys = source.getLayer("geonode:school_may310").addTo(mymap);
+    }  
+}
+
+function addDistrictLayer(){
+    console.log('District layer');
+    mymap.setZoom(7);
+    if(districtL){
+        districtL.remove(mymap);
+        districtL =0;
+    }else{
+        districtL = source.getLayer("geonode:district_boundaries_of_maharashtra").addTo(mymap);
+    }  
+}
+
+function addWardLayer(){
+    console.log('Ward layer');
+    mymap.setZoom(10);
+    if(wardl){
+        wardl.remove(mymap);
+        wardl =0;
+    }else{
+        wardl = source.getLayer("geonode:mumbai_ward_boundary").addTo(mymap);
+    }  
+}
+
+
+function addDDWLayer(){
+    console.log('DDW layer');
+    mymap.setZoom(7);
+    if(ddwl){
+        ddwl.remove(mymap);
+        ddwl =0;
+    }else{
+        ddwl = source.getLayer("geonode:ddw").addTo(mymap);
+    }  
+}
+
+//filter functions
+
+function returnEagleMarker(json, latlng){
+    var att = json.properties;
+    if (att.is_the_segregation_at_source_adequate=='Yes') {
+        var clrNest = 'chartreuse';
+    } else {
+        var clrNest = 'deeppink';
+    }
+    // arEagleIDs.push(att.nest_id.toString());
+    return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<img width=100 height=100 src='data/swm_hwest/"+att.society_photo+".jpg'/><h4>Society Name: "+att.society_name+"</h4>Segeregation at source: "+att.is_the_segregation_at_source_adequate);
+}
+
+function filterEagle(json) {
+    var att=json.properties;
+    var optFilter = $("input[name=fltEagle]:checked").val();
+    if (optFilter=='ALL') {
+        return true;
+    } else {
+        return (att.is_the_segregation_at_source_adequate==optFilter);
+    }
+}
+
+$("input[name=fltEagle]").click(function(){
+    //arEagleIDs=[];
+    buildseg.refresh();
+});
+
+function returnCompMarker(json, latlng){
+    var att = json.properties;
+    if (att.do_you_have_any_in_house_composting_facility=='Yes') {
+        var clrNest = 'chartreuse';
+    } else {
+        var clrNest = 'deeppink';
+    }
+    // arEagleIDs.push(att.nest_id.toString());
+    return L.circle(latlng, {radius:10, color:clrNest}).bindTooltip("<img width=100 height=100 src='data/swm_hwest/"+att.society_photo+".jpg'/><h4>Society Name: "+att.society_name+"</h4>Composting at source: "+att.do_you_have_any_in_house_composting_facility);
+}
+
+function filterComp(json) {
+    var att=json.properties;
+    var optFilter = $("input[name=optbcomp]:checked").val();
+    if (optFilter=='ALL') {
+        return true;
+    } else {
+        return (att.do_you_have_any_in_house_composting_facility==optFilter);
+    }
+}
+
+$("input[name=optbcomp]").click(function(){
+    //arEagleIDs=[];
+    buildcomp.refresh();
+});
+
+function returnWeightMarker(json, latlng){
+    var att = json.properties;
+    // if (att.do_you_have_any_in_house_composting_facility=='Yes') {
+    //     var clrNest = 'chartreuse';
+    // } else {
+    //     var clrNest = 'deeppink';
+    // }
+    // arEagleIDs.push(att.nest_id.toString());
+    var new_popu = att.flats * 2;
+    var new_weight = att.weight/new_popu;
+    return L.circle(latlng, {radius:10, color:"chartreuse"}).bindTooltip("<img width=100 height=100 src='data/swm_hwest/"+att.society_photo+".jpg'/><h4>Society Name: "+att.society_name+"</h4>Weight: "+new_weight);
+}
+
+</script>
+{% endblock %}
