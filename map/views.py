@@ -29,3 +29,7 @@ def logout_user(request):
     logout(request)
     messages.success(request,('logged out!!'))
     return render(request,'map/login.html',{})
+
+
+def demo(request):
+    return render(request,'map/demo.html')
