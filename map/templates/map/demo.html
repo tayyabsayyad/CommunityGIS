@@ -309,7 +309,10 @@
                         </ul> 
                         </div>
                     </nav>
-                    
+                    <!-- correct -->
+                    <div class="col-md-4 text-center"> 
+                        <button style="position: absolute;left: 150px;top: 800px" id="closebutton" name="closebutton" class="btn btn-secondary"><span class="glyphicon glyphicon-off"></span></button> 
+                    </div>
                 </div>
     <!-- /view -->
     <script>
@@ -411,6 +414,10 @@ var mymap;
                 ctlEasybutton = L.easyButton('glyphicon-transfer', function(){
                    ctlSidebar.toggle(); 
                 }).addTo(mymap);
+
+                $("#closebutton").click(function(){
+                    ctlSidebar.toggle();
+                });
 
                 var helloPopup = L.popup().setContent('<h1>About US</h1><br><i>Primary objective of communitygis is to provide educational platform for learners to learn about spatial information and learn how these  modern tools can be used to solve real life problems. <br/><br/>It creates a platform for people who range from those who can contribute data ( mobile based point data collection to digitization of published maps) to those who can analyse the data to infer useful social knowledge.                    <br/><br/>It is a digital contraption needed to collect, aggregate , access and analyse data  finally provide decision support for to manipulate reality.                    <br/><br/>Since all source code is published , under GPL, any one can reproduce the technology , without any permission from makerGHAT.This has been created by volunteers and coordinated by www.makerghat.org<i>');
 
